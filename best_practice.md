@@ -99,3 +99,65 @@ foo =~ /example/
 # good
 foo['example']
 ```
+
+## Conditional Assignment
+
+- [indent-conditional-assignment](https://rubystyle.guide/#indent-conditional-assignment
+)
+
+- [ruby style guide about condition](https://github.com/rubocop/ruby-style-guide/issues/476)
+
+```ruby
+# good (and a bit more width efficient)
+kind =
+  case year
+  when 1850..1889 then 'Blues'
+  when 1890..1909 then 'Ragtime'
+  when 1910..1929 then 'New Orleans Jazz'
+  when 1930..1939 then 'Swing'
+  when 1940..1950 then 'Bebop'
+  else 'Jazz'
+  end
+
+result =
+  if some_cond
+    calc_something
+  else
+    calc_something_else
+  end
+
+# good
+if
+  some.long.method &&
+  other_condition &&
+  another_condition
+then
+  do_something
+  do_something_else
+end
+```
+
+## Multiline Parameters
+
+- [no-double-indent](https://rubystyle.guide/#no-double-indent)
+
+```ruby
+# good (normal indent)
+def send_mail(source)
+  Mailer.deliver(
+    to: 'bob@example.com',
+    from: 'us@example.com',
+    subject: 'Important message',
+    body: source.text
+  )
+end
+```
+
+## Self-assignment
+
+- [Self-assignment](https://rubystyle.guide/#self-assignment)
+
+```ruby
+x += 1
+@payment ||= Payment.first
+```
