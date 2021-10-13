@@ -14,7 +14,7 @@ sarcasm = "I \"like\" it."
 # good
 name = "Bozhidar"
 str = "I'm a body"
-sarcasm = 'I "like" it.'
+sarcasm = "I \"like\" it."
 ```
 
 ## Use %w %i
